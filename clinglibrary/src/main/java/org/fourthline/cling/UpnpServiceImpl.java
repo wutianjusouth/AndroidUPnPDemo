@@ -85,7 +85,7 @@ public class UpnpServiceImpl implements UpnpService {
         this.router = createRouter(protocolFactory, registry);
 
         try {
-            this.router.enable();
+            this.router.enable(); // 初始化路由器.
         } catch (RouterException ex) {
             throw new RuntimeException("Enabling network router failed: " + ex, ex);
         }
