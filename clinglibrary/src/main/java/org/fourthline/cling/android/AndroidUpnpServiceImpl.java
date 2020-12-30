@@ -51,6 +51,7 @@ public class AndroidUpnpServiceImpl extends Service {
     public void onCreate() {
         super.onCreate();
 
+        // UpnpService的实例化，为 UpnpServiceImpl 实现.
         upnpService = new UpnpServiceImpl(createConfiguration()) {
 
             @Override
@@ -76,6 +77,7 @@ public class AndroidUpnpServiceImpl extends Service {
         };
     }
 
+    // createConfiguration 的实例化.
     protected UpnpServiceConfiguration createConfiguration() {
         return new AndroidUpnpServiceConfiguration();
     }

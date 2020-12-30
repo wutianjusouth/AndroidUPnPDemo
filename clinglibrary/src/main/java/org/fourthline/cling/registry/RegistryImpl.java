@@ -70,6 +70,7 @@ public class RegistryImpl implements Registry {
     public RegistryImpl(UpnpService upnpService) {
         log.fine("Creating Registry: " + getClass().getName());
 
+        // UpnpServiceImpl.
         this.upnpService = upnpService;
 
         log.fine("Starting registry background maintenance...");
@@ -100,7 +101,7 @@ public class RegistryImpl implements Registry {
 
     // #################################################################################################
 
-    protected final Set<RegistryListener> registryListeners = new HashSet<>();
+    protected final Set<RegistryListener> registryListeners = new HashSet<>(); // UPnP的设备监听回调.
     protected final Set<RegistryItem<URI, Resource>> resourceItems = new HashSet<>();
     protected final List<Runnable> pendingExecutions = new ArrayList<>();
 

@@ -51,14 +51,17 @@ public class ClingUpnpService extends AndroidUpnpServiceImpl {
         return upnpService.getConfiguration();
     }
 
+    // UpnpService的实例化，为 UpnpServiceImpl 实现.
     public Registry getRegistry() {
-        return upnpService.getRegistry();
+        return upnpService.getRegistry(); // AndroidUpnpServiceImpl 中的代码.
     }
 
+    // UpnpService的实例化，为 UpnpServiceImpl 实现.
     public ControlPoint getControlPoint() {
         return upnpService.getControlPoint();
     }
 
+    // 返回 ClingUpnpService 自身实例.
     public class LocalBinder extends Binder {
         public ClingUpnpService getService() {
             return ClingUpnpService.this;

@@ -32,6 +32,7 @@ public class OutgoingSearchRequest extends OutgoingDatagramMessage<UpnpRequest> 
 
     private UpnpHeader searchTarget;
 
+    // 配置头部.
     public OutgoingSearchRequest(UpnpHeader searchTarget, int mxSeconds) {
         super(
                 new UpnpRequest(UpnpRequest.Method.MSEARCH),

@@ -49,8 +49,8 @@ import org.fourthline.cling.protocol.sync.SendingSubscribe;
 import org.fourthline.cling.protocol.sync.SendingUnsubscribe;
 import org.fourthline.cling.transport.RouterException;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+//import javax.enterprise.context.ApplicationScoped;
+//import javax.inject.Inject;
 import java.net.URI;
 import java.net.URL;
 import java.util.List;
@@ -62,7 +62,7 @@ import java.util.logging.Logger;
  *
  * @author Christian Bauer
  */
-@ApplicationScoped
+//@ApplicationScoped
 public class ProtocolFactoryImpl implements ProtocolFactory {
 
     final private static Logger log = Logger.getLogger(ProtocolFactory.class.getName());
@@ -73,12 +73,13 @@ public class ProtocolFactoryImpl implements ProtocolFactory {
         upnpService = null;
     }
 
-    @Inject
+//    @Inject
     public ProtocolFactoryImpl(UpnpService upnpService) {
         log.fine("Creating ProtocolFactory: " + getClass().getName());
-        this.upnpService = upnpService;
+        this.upnpService = upnpService; // UpnpServiceImpl.
     }
 
+    // UpnpServiceImpl.
     public UpnpService getUpnpService() {
         return upnpService;
     }
@@ -125,6 +126,7 @@ public class ProtocolFactoryImpl implements ProtocolFactory {
 
     protected boolean isByeBye(IncomingDatagramMessage message) {
         String ntsHeader = message.getHeaders().getFirstHeader(UpnpHeader.Type.NTS.getHttpName());
+//        String ntsHeader = message.getHeaders().getFirstHeader(UpnpHeader.Type.NTS);
         return ntsHeader != null && ntsHeader.equals(NotificationSubtype.BYEBYE.getHeaderString());
     }
 
@@ -206,6 +208,7 @@ public class ProtocolFactoryImpl implements ProtocolFactory {
         return new SendingNotificationByebye(getUpnpService(), localDevice);
     }
 
+    // 查找UPnP设备的重要方法，UpnpServiceImpl.
     public SendingSearch createSendingSearch(UpnpHeader searchTarget, int mxSeconds) {
         return new SendingSearch(getUpnpService(), searchTarget, mxSeconds);
     }

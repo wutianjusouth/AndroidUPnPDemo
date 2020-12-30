@@ -81,6 +81,7 @@ public class UpnpServiceImpl implements UpnpService {
             this.registry.addListener(registryListener);
         }
 
+        // 初始化Router.
         this.router = createRouter(protocolFactory, registry);
 
         try {
@@ -89,23 +90,28 @@ public class UpnpServiceImpl implements UpnpService {
             throw new RuntimeException("Enabling network router failed: " + ex, ex);
         }
 
+        // 创建控制点，仅一处调用.
         this.controlPoint = createControlPoint(protocolFactory, registry);
 
         log.info("<<< UPnP service started successfully");
     }
 
+    // 仅一处调用，UpnpServiceImpl.
     protected ProtocolFactory createProtocolFactory() {
         return new ProtocolFactoryImpl(this);
     }
 
+    // Registry 实例的由来，为 RegistryImpl 的实现.
     protected Registry createRegistry(ProtocolFactory protocolFactory) {
         return new RegistryImpl(this);
     }
 
+    // 初始化Router.
     protected Router createRouter(ProtocolFactory protocolFactory, Registry registry) {
         return new RouterImpl(getConfiguration(), protocolFactory);
     }
 
+    // 仅一处调用.
     protected ControlPoint createControlPoint(ProtocolFactory protocolFactory, Registry registry) {
         return new ControlPointImpl(getConfiguration(), protocolFactory, registry);
     }

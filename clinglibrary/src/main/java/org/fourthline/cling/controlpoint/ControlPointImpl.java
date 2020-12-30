@@ -24,9 +24,9 @@ import org.fourthline.cling.model.message.header.UpnpHeader;
 import org.fourthline.cling.protocol.ProtocolFactory;
 import org.fourthline.cling.registry.Registry;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.event.Observes;
-import javax.inject.Inject;
+//import javax.enterprise.context.ApplicationScoped;
+//import javax.enterprise.event.Observes;
+//import javax.inject.Inject;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.logging.Logger;
@@ -40,7 +40,7 @@ import java.util.logging.Logger;
  *
  * @author Christian Bauer
  */
-@ApplicationScoped
+//@ApplicationScoped
 public class ControlPointImpl implements ControlPoint {
 
     private static Logger log = Logger.getLogger(ControlPointImpl.class.getName());
@@ -52,12 +52,12 @@ public class ControlPointImpl implements ControlPoint {
     protected ControlPointImpl() {
     }
 
-    @Inject
+//    @Inject
     public ControlPointImpl(UpnpServiceConfiguration configuration, ProtocolFactory protocolFactory, Registry registry) {
         log.fine("Creating ControlPoint: " + getClass().getName());
         
         this.configuration = configuration;
-        this.protocolFactory = protocolFactory;
+        this.protocolFactory = protocolFactory; // 赋值.
         this.registry = registry;
     }
 
@@ -73,7 +73,8 @@ public class ControlPointImpl implements ControlPoint {
         return registry;
     }
 
-    public void search(@Observes Search search) {
+//    public void search(@Observes Search search) {
+    public void search(Search search) {
         search(search.getSearchType(), search.getMxSeconds());
     }
 

@@ -17,7 +17,7 @@ package org.fourthline.cling.protocol;
 
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.transport.RouterException;
-import org.seamless.util.Exceptions;
+//import org.seamless.util.Exceptions;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,6 +35,8 @@ import java.util.logging.Logger;
  *
  * @author Christian Bauer
  */
+
+// 继承了 Runnable 方法.
 public abstract class SendingAsync implements Runnable {
 
     final private static Logger log = Logger.getLogger(UpnpService.class.getName());
@@ -53,14 +55,14 @@ public abstract class SendingAsync implements Runnable {
         try {
             execute();
         } catch (Exception ex) {
-            Throwable cause = Exceptions.unwrap(ex);
-            if (cause instanceof InterruptedException) {
-                log.log(Level.INFO, "Interrupted protocol '" + getClass().getSimpleName() + "': " + ex, cause);
-            } else {
-                throw new RuntimeException(
-                    "Fatal error while executing protocol '" + getClass().getSimpleName() + "': " + ex, ex
-                );
-            }
+//            Throwable cause = Exceptions.unwrap(ex);
+//            if (cause instanceof InterruptedException) {
+//                log.log(Level.INFO, "Interrupted protocol '" + getClass().getSimpleName() + "': " + ex, cause);
+//            } else {
+//                throw new RuntimeException(
+//                    "Fatal error while executing protocol '" + getClass().getSimpleName() + "': " + ex, ex
+//                );
+//            }
         }
     }
 

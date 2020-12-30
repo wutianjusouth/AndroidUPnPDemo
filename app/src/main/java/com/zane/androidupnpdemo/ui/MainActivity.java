@@ -87,15 +87,16 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             Log.e(TAG, "mUpnpServiceConnection onServiceConnected");
 
             ClingUpnpService.LocalBinder binder = (ClingUpnpService.LocalBinder) service;
-            ClingUpnpService beyondUpnpService = binder.getService();
+            ClingUpnpService beyondUpnpService = binder.getService(); // 实质就是 ClingUpnpService.
 
             ClingManager clingUpnpServiceManager = ClingManager.getInstance();
-            clingUpnpServiceManager.setUpnpService(beyondUpnpService);
+            clingUpnpServiceManager.setUpnpService(beyondUpnpService); // 实质就是 ClingUpnpService.
             clingUpnpServiceManager.setDeviceManager(new DeviceManager());
 
+            // 在Registry上增加UPnP设备发现的监听，具体实现为RegistryImpl.
             clingUpnpServiceManager.getRegistry().addListener(mBrowseRegistryListener);
             //Search on service created.
-            clingUpnpServiceManager.searchDevices();
+            clingUpnpServiceManager.searchDevices(); // 开始发现设备.
         }
 
         @Override

@@ -15,7 +15,7 @@
 
 package org.fourthline.cling.model.message;
 
-import org.seamless.http.Headers;
+//import org.seamless.http.Headers;
 import org.fourthline.cling.model.message.header.UpnpHeader;
 
 import java.io.ByteArrayInputStream;

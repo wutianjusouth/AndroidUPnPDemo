@@ -53,6 +53,7 @@ public class ClingManager implements IClingManager {
     }
 
 
+    // MainActivity中调用.
     @Override
     public void searchDevices() {
         if (!Utils.isNull(mUpnpService)) {
@@ -132,9 +133,10 @@ public class ClingManager implements IClingManager {
         mDeviceManager.registerRenderingControl(context);
     }
 
+    // 实质上设为 ClingUpnpService.
     @Override
     public void setUpnpService(ClingUpnpService upnpService) {
-        mUpnpService = upnpService;
+        mUpnpService = upnpService; // 实质就是 ClingUpnpService.
     }
 
     @Override

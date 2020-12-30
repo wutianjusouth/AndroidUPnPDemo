@@ -32,12 +32,12 @@ import org.fourthline.cling.transport.spi.NoNetworkException;
 import org.fourthline.cling.transport.spi.StreamClient;
 import org.fourthline.cling.transport.spi.StreamServer;
 import org.fourthline.cling.transport.spi.UpnpStream;
-import org.seamless.util.Exceptions;
+//import org.seamless.util.Exceptions;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.event.Observes;
-import javax.enterprise.inject.Default;
-import javax.inject.Inject;
+//import javax.enterprise.context.ApplicationScoped;
+//import javax.enterprise.event.Observes;
+//import javax.enterprise.inject.Default;
+//import javax.inject.Inject;
 import java.net.BindException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
@@ -62,7 +62,7 @@ import java.util.logging.Logger;
  *
  * @author Christian Bauer
  */
-@ApplicationScoped
+//@ApplicationScoped
 public class RouterImpl implements Router {
 
     private static Logger log = Logger.getLogger(Router.class.getName());
@@ -89,18 +89,20 @@ public class RouterImpl implements Router {
      * @param configuration   The configuration used by this router.
      * @param protocolFactory The protocol factory used by this router.
      */
-    @Inject
+//    @Inject
     public RouterImpl(UpnpServiceConfiguration configuration, ProtocolFactory protocolFactory) {
         log.info("Creating Router: " + getClass().getName());
         this.configuration = configuration;
         this.protocolFactory = protocolFactory;
     }
 
-    public boolean enable(@Observes @Default EnableRouter event) throws RouterException {
+//    public boolean enable(@Observes @Default EnableRouter event) throws RouterException {
+    public boolean enable(EnableRouter event) throws RouterException {
         return enable();
     }
 
-    public boolean disable(@Observes @Default DisableRouter event) throws RouterException {
+//    public boolean disable(@Observes @Default DisableRouter event) throws RouterException {
+    public boolean disable(DisableRouter event) throws RouterException {
         return disable();
     }
 
@@ -210,7 +212,7 @@ public class RouterImpl implements Router {
             log.info("Unable to initialize network router, no network found.");
         } else {
             log.severe("Unable to initialize network router: " + ex);
-            log.severe("Cause: " + Exceptions.unwrap(ex));
+//            log.severe("Cause: " + Exceptions.unwrap(ex));
         }
     }
 
@@ -277,7 +279,7 @@ public class RouterImpl implements Router {
                 log.fine("Received asynchronous message: " + msg);
             getConfiguration().getAsyncProtocolExecutor().execute(protocol);
         } catch (ProtocolCreationException ex) {
-            log.warning("Handling received datagram failed - " + Exceptions.unwrap(ex).toString());
+//            log.warning("Handling received datagram failed - " + Exceptions.unwrap(ex).toString());
         }
     }
 
@@ -301,6 +303,7 @@ public class RouterImpl implements Router {
      *
      * @param msg The UDP datagram message to send.
      */
+    // 发送UDP数据.
     public void send(OutgoingDatagramMessage msg) throws RouterException {
         lock(readLock);
         try {
@@ -434,17 +437,17 @@ public class RouterImpl implements Router {
                     streamServer.init(address, this);
                     streamServers.put(address, streamServer);
                 } catch (InitializationException ex) {
-                    // Try to recover
-                    Throwable cause = Exceptions.unwrap(ex);
-                    if (cause instanceof BindException) {
-                        log.warning("Failed to init StreamServer: " + cause);
-                        if (log.isLoggable(Level.FINE))
-                            log.log(Level.FINE, "Initialization exception root cause", cause);
-                        log.warning("Removing unusable address: " + address);
-                        addresses.remove();
-                        continue; // Don't try anything else with this address
-                    }
-                    throw ex;
+//                    // Try to recover
+//                    Throwable cause = Exceptions.unwrap(ex);
+//                    if (cause instanceof BindException) {
+//                        log.warning("Failed to init StreamServer: " + cause);
+//                        if (log.isLoggable(Level.FINE))
+//                            log.log(Level.FINE, "Initialization exception root cause", cause);
+//                        log.warning("Removing unusable address: " + address);
+//                        addresses.remove();
+//                        continue; // Don't try anything else with this address
+//                    }
+//                    throw ex;
                 }
             }
 

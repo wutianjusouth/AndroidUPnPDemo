@@ -25,6 +25,7 @@
         </activity>
 
 
+        <!-- UPnP 辅助Service. -->
         <service
             android:name=".service.ClingUpnpService"
             android:exported="false" />

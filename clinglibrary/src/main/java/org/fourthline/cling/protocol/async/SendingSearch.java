@@ -34,6 +34,8 @@ import java.util.logging.Logger;
  *
  * @author Christian Bauer
  */
+
+// 继承了 Runnable 方法.
 public class SendingSearch extends SendingAsync {
 
     final private static Logger log = Logger.getLogger(SendingSearch.class.getName());
@@ -58,6 +60,7 @@ public class SendingSearch extends SendingAsync {
     /**
      * @param mxSeconds The time in seconds a host should wait before responding.
      */
+    // 查找UPnP设备的重要方法，UpnpServiceImpl.
     public SendingSearch(UpnpService upnpService, UpnpHeader searchTarget, int mxSeconds) {
         super(upnpService);
 
@@ -78,10 +81,13 @@ public class SendingSearch extends SendingAsync {
         return mxSeconds;
     }
 
+
+    // 查找UPnP设备的重要方法，UpnpServiceImpl.
     protected void execute() throws RouterException {
 
         log.fine("Executing search for target: " + searchTarget.getString() + " with MX seconds: " + getMxSeconds());
 
+        // 配置头部，仅唯一调用.
         OutgoingSearchRequest msg = new OutgoingSearchRequest(searchTarget, getMxSeconds());
         prepareOutgoingSearchRequest(msg);
 
