@@ -28,7 +28,7 @@ import org.fourthline.cling.transport.spi.InitializationException;
 import org.fourthline.cling.transport.spi.NetworkAddressFactory;
 import org.fourthline.cling.transport.spi.UpnpStream;
 
-import javax.enterprise.inject.Alternative;
+//import javax.enterprise.inject.Alternative;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ import java.util.List;
  *
  * @author Christian Bauer
  */
-@Alternative
+//@Alternative
 public class MockRouter implements Router {
 
     public int counter = -1;

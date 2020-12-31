@@ -19,7 +19,7 @@ import org.fourthline.cling.DefaultUpnpServiceConfiguration;
 import org.fourthline.cling.transport.impl.NetworkAddressFactoryImpl;
 import org.fourthline.cling.transport.spi.NetworkAddressFactory;
 
-import javax.enterprise.inject.Alternative;
+//import javax.enterprise.inject.Alternative;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author Christian Bauer
  */
-@Alternative
+//@Alternative
 public class MockUpnpServiceConfiguration extends DefaultUpnpServiceConfiguration {
 
     final protected boolean maintainsRegistry;

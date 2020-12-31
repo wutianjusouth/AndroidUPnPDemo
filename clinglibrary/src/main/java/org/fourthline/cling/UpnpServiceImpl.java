@@ -25,9 +25,9 @@ import org.fourthline.cling.registry.RegistryListener;
 import org.fourthline.cling.transport.Router;
 import org.fourthline.cling.transport.RouterException;
 import org.fourthline.cling.transport.RouterImpl;
-import org.seamless.util.Exceptions;
+//import org.seamless.util.Exceptions;
 
-import javax.enterprise.inject.Alternative;
+//import javax.enterprise.inject.Alternative;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -46,7 +46,7 @@ import java.util.logging.Logger;
  *
  * @author Christian Bauer
  */
-@Alternative
+//@Alternative
 public class UpnpServiceImpl implements UpnpService {
 
     private static Logger log = Logger.getLogger(UpnpServiceImpl.class.getName());
@@ -167,12 +167,12 @@ public class UpnpServiceImpl implements UpnpService {
         try {
             getRouter().shutdown();
         } catch (RouterException ex) {
-            Throwable cause = Exceptions.unwrap(ex);
-            if (cause instanceof InterruptedException) {
-                log.log(Level.INFO, "Router shutdown was interrupted: " + ex, cause);
-            } else {
-                log.log(Level.SEVERE, "Router error on shutdown: " + ex, cause);
-            }
+//            Throwable cause = Exceptions.unwrap(ex);
+//            if (cause instanceof InterruptedException) {
+//                log.log(Level.INFO, "Router shutdown was interrupted: " + ex, cause);
+//            } else {
+//                log.log(Level.SEVERE, "Router error on shutdown: " + ex, cause);
+//            }
         }
     }
 

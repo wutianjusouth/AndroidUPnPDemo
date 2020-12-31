@@ -45,9 +45,9 @@ import org.fourthline.cling.transport.spi.NetworkAddressFactory;
 import org.fourthline.cling.transport.spi.SOAPActionProcessor;
 import org.fourthline.cling.transport.spi.StreamClient;
 import org.fourthline.cling.transport.spi.StreamServer;
-import org.seamless.util.Exceptions;
+//import org.seamless.util.Exceptions;
 
-import javax.enterprise.inject.Alternative;
+//import javax.enterprise.inject.Alternative;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.RejectedExecutionHandler;
@@ -83,7 +83,7 @@ import java.util.logging.Logger;
  *
  * @author Christian Bauer
  */
-@Alternative
+//@Alternative
 public class DefaultUpnpServiceConfiguration implements UpnpServiceConfiguration {
 
     private static Logger log = Logger.getLogger(DefaultUpnpServiceConfiguration.class.getName());
@@ -329,18 +329,18 @@ public class DefaultUpnpServiceConfiguration implements UpnpServiceConfiguration
         @Override
         protected void afterExecute(Runnable runnable, Throwable throwable) {
             super.afterExecute(runnable, throwable);
-            if (throwable != null) {
-                Throwable cause = Exceptions.unwrap(throwable);
-                if (cause instanceof InterruptedException) {
-                    // Ignore this, might happen when we shutdownNow() the executor. We can't
-                    // log at this point as the logging system might be stopped already (e.g.
-                    // if it's a CDI component).
-                    return;
-                }
-                // Log only
-                log.warning("Thread terminated " + runnable + " abruptly with exception: " + throwable);
-                log.warning("Root cause: " + cause);
-            }
+//            if (throwable != null) {
+//                Throwable cause = Exceptions.unwrap(throwable);
+//                if (cause instanceof InterruptedException) {
+//                    // Ignore this, might happen when we shutdownNow() the executor. We can't
+//                    // log at this point as the logging system might be stopped already (e.g.
+//                    // if it's a CDI component).
+//                    return;
+//                }
+//                // Log only
+//                log.warning("Thread terminated " + runnable + " abruptly with exception: " + throwable);
+//                log.warning("Root cause: " + cause);
+//            }
         }
     }
 
