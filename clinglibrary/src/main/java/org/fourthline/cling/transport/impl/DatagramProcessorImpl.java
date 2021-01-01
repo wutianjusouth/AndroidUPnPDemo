@@ -18,7 +18,7 @@ package org.fourthline.cling.transport.impl;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
-import org.fourthline.cling.model.message.Headers;
+//import org.fourthline.cling.model.message.Headers;
 import org.fourthline.cling.model.message.IncomingDatagramMessage;
 import org.fourthline.cling.model.message.OutgoingDatagramMessage;
 import org.fourthline.cling.model.message.UpnpHeaders;
@@ -27,6 +27,7 @@ import org.fourthline.cling.model.message.UpnpRequest;
 import org.fourthline.cling.model.message.UpnpResponse;
 import org.fourthline.cling.transport.spi.DatagramProcessor;
 import org.fourthline.cling.model.UnsupportedDataException;
+import org.seamless.http.Headers;
 //import org.seamless.http.Headers;
 
 import java.io.ByteArrayInputStream;

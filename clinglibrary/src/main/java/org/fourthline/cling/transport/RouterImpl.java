@@ -133,6 +133,8 @@ public class RouterImpl implements Router {
                     startInterfaceBasedTransports(networkAddressFactory.getNetworkInterfaces());
                     startAddressBasedTransports(networkAddressFactory.getBindAddresses());
 
+
+                    // 如果没有网络，则抛出异常.
                     // The transports possibly removed some unusable network interfaces/addresses
                     if (!networkAddressFactory.hasUsableNetwork()) {
                         throw new NoNetworkException(
@@ -141,6 +143,7 @@ public class RouterImpl implements Router {
                     }
 
                     // Start the HTTP client last, we don't even have to try if there is no network
+                    // 实际实现类为 AndroidUpnpServiceConfiguration.
                     streamClient = getConfiguration().createStreamClient();
 
                     enabled = true;

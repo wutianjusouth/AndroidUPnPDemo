@@ -87,6 +87,7 @@ public class NetworkAddressFactoryImpl implements NetworkAddressFactory {
             useAddresses.addAll(Arrays.asList(useAddressesStrings));
         }
 
+        // 查找本地网络接口.
         discoverNetworkInterfaces();
         discoverBindAddresses();
 

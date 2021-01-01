@@ -34,8 +34,8 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     // Cling library
-//    compile 'org.fourthline.cling:cling-core:2.1.1'
-//    compile 'org.fourthline.cling:cling-support:2.1.1'
+    compile 'org.fourthline.cling:cling-core:2.1.1'
+    compile 'org.fourthline.cling:cling-support:2.1.1'
     // Jetty library
     compile 'org.eclipse.jetty:jetty-server:8.1.12.v20130726'
     compile 'org.eclipse.jetty:jetty-servlet:8.1.12.v20130726'

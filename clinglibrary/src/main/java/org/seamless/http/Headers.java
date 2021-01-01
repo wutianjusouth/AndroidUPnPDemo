@@ -1,4 +1,5 @@
-package org.fourthline.cling.model.message;
+//package org.fourthline.cling.model.message;
+package org.seamless.http;
 
 /*
  * Copyright (C) 2012 4th Line GmbH, Switzerland
