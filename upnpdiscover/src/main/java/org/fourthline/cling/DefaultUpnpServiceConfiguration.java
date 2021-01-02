@@ -33,10 +33,10 @@ import org.fourthline.cling.transport.impl.MulticastReceiverConfigurationImpl;
 import org.fourthline.cling.transport.impl.MulticastReceiverImpl;
 import org.fourthline.cling.transport.impl.NetworkAddressFactoryImpl;
 import org.fourthline.cling.transport.impl.SOAPActionProcessorImpl;
-import org.fourthline.cling.transport.impl.StreamClientConfigurationImpl;
-import org.fourthline.cling.transport.impl.StreamClientImpl;
-import org.fourthline.cling.transport.impl.StreamServerConfigurationImpl;
-import org.fourthline.cling.transport.impl.StreamServerImpl;
+//import org.fourthline.cling.transport.impl.StreamClientConfigurationImpl;
+//import org.fourthline.cling.transport.impl.StreamClientImpl;
+//import org.fourthline.cling.transport.impl.StreamServerConfigurationImpl;
+//import org.fourthline.cling.transport.impl.StreamServerImpl;
 import org.fourthline.cling.transport.spi.DatagramIO;
 import org.fourthline.cling.transport.spi.DatagramProcessor;
 import org.fourthline.cling.transport.spi.GENAEventProcessor;
@@ -148,11 +148,12 @@ public class DefaultUpnpServiceConfiguration implements UpnpServiceConfiguration
     }
 
     public StreamClient createStreamClient() {
-        return new StreamClientImpl(
-            new StreamClientConfigurationImpl(
-                getSyncProtocolExecutorService()
-            )
-        );
+//        return new StreamClientImpl(
+//            new StreamClientConfigurationImpl(
+//                getSyncProtocolExecutorService()
+//            )
+//        );
+        return null;
     }
 
     public MulticastReceiver createMulticastReceiver(NetworkAddressFactory networkAddressFactory) {
@@ -169,11 +170,12 @@ public class DefaultUpnpServiceConfiguration implements UpnpServiceConfiguration
     }
 
     public StreamServer createStreamServer(NetworkAddressFactory networkAddressFactory) {
-        return new StreamServerImpl(
-                new StreamServerConfigurationImpl(
-                        networkAddressFactory.getStreamListenPort()
-                )
-        );
+//        return new StreamServerImpl(
+//                new StreamServerConfigurationImpl(
+//                        networkAddressFactory.getStreamListenPort()
+//                )
+//        );
+        return null;
     }
 
     public Executor getMulticastReceiverExecutor() {

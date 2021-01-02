@@ -20,7 +20,7 @@ import org.fourthline.cling.model.message.StreamRequestMessage;
 import org.fourthline.cling.model.message.UpnpHeaders;
 import org.fourthline.cling.model.message.header.UpnpHeader;
 import org.fourthline.cling.model.message.header.UserAgentHeader;
-import org.seamless.http.RequestInfo;
+//import org.seamless.http.RequestInfo;
 
 import java.net.InetAddress;
 
@@ -105,24 +105,24 @@ public class RemoteClientInfo extends ClientInfo {
         );
     }
 
-    // TODO: Remove this once we know how ClientProfile will look like
-    public boolean isWMPRequest() {
-        return RequestInfo.isWMPRequest(getRequestUserAgent());
-    }
+//    // TODO: Remove this once we know how ClientProfile will look like
+//    public boolean isWMPRequest() {
+//        return RequestInfo.isWMPRequest(getRequestUserAgent());
+//    }
+//
+//    public boolean isXbox360Request() {
+//        return RequestInfo.isXbox360Request(
+//            getRequestUserAgent(),
+//            getRequestHeaders().getFirstHeaderString(UpnpHeader.Type.SERVER)
+//        );
+//    }
 
-    public boolean isXbox360Request() {
-        return RequestInfo.isXbox360Request(
-            getRequestUserAgent(),
-            getRequestHeaders().getFirstHeaderString(UpnpHeader.Type.SERVER)
-        );
-    }
-
-    public boolean isPS3Request() {
-    	return RequestInfo.isPS3Request(
-            getRequestUserAgent(),
-            getRequestHeaders().getFirstHeaderString(UpnpHeader.Type.EXT_AV_CLIENT_INFO)
-        );
-    }
+//    public boolean isPS3Request() {
+//    	return RequestInfo.isPS3Request(
+//            getRequestUserAgent(),
+//            getRequestHeaders().getFirstHeaderString(UpnpHeader.Type.EXT_AV_CLIENT_INFO)
+//        );
+//    }
 
     @Override
     public String toString() {

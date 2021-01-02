@@ -26,7 +26,7 @@ import org.fourthline.cling.model.UnsupportedDataException;
 import org.seamless.xml.XmlPullParserUtils;
 import org.xmlpull.v1.XmlPullParser;
 
-import javax.enterprise.inject.Alternative;
+//import javax.enterprise.inject.Alternative;
 
 /**
  * Implementation based on the <em>Xml Pull Parser</em> XML processing API.
@@ -40,7 +40,7 @@ import javax.enterprise.inject.Alternative;
  *
  * @author Michael Pujos
  */
-@Alternative
+//@Alternative
 public class PullGENAEventProcessorImpl extends GENAEventProcessorImpl {
 
 	private static Logger log = Logger.getLogger(GENAEventProcessor.class.getName());

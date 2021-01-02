@@ -21,7 +21,7 @@ import org.fourthline.cling.model.message.gena.IncomingEventRequestMessage;
 import org.fourthline.cling.transport.spi.GENAEventProcessor;
 import org.seamless.xml.XmlPullParserUtils;
 
-import javax.enterprise.inject.Alternative;
+//import javax.enterprise.inject.Alternative;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -47,7 +47,7 @@ import java.util.regex.Pattern;
  *
  * @author Michael Pujos
  */
-@Alternative
+//@Alternative
 public class RecoveringGENAEventProcessorImpl extends PullGENAEventProcessorImpl {
 
     private static Logger log = Logger.getLogger(GENAEventProcessor.class.getName());

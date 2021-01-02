@@ -3,7 +3,7 @@ package com.zane.androidupnpdemo.service;
 import android.content.Intent;
 import android.os.IBinder;
 
-import com.zane.androidupnpdemo.upnp.AndroidJettyServletContainer;
+//import com.zane.androidupnpdemo.upnp.AndroidJettyServletContainer;
 
 import org.fourthline.cling.UpnpServiceConfiguration;
 import org.fourthline.cling.android.AndroidUpnpServiceConfiguration;
@@ -11,10 +11,10 @@ import org.fourthline.cling.android.AndroidUpnpServiceImpl;
 import org.fourthline.cling.controlpoint.ControlPoint;
 import org.fourthline.cling.model.meta.LocalDevice;
 import org.fourthline.cling.registry.Registry;
-import org.fourthline.cling.transport.impl.AsyncServletStreamServerConfigurationImpl;
-import org.fourthline.cling.transport.impl.AsyncServletStreamServerImpl;
-import org.fourthline.cling.transport.spi.NetworkAddressFactory;
-import org.fourthline.cling.transport.spi.StreamServer;
+//import org.fourthline.cling.transport.impl.AsyncServletStreamServerConfigurationImpl;
+//import org.fourthline.cling.transport.impl.AsyncServletStreamServerImpl;
+//import org.fourthline.cling.transport.spi.NetworkAddressFactory;
+//import org.fourthline.cling.transport.spi.StreamServer;
 
 /**
  * 说明：

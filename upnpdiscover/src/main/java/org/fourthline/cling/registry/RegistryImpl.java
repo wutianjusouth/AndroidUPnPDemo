@@ -110,6 +110,7 @@ public class RegistryImpl implements Registry {
 
     // #################################################################################################
 
+    // 增加扫描监听.
     synchronized public void addListener(RegistryListener listener) {
         registryListeners.add(listener);
     }

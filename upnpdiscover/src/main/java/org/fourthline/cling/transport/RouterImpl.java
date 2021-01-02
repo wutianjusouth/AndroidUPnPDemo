@@ -144,7 +144,7 @@ public class RouterImpl implements Router {
 
                     // Start the HTTP client last, we don't even have to try if there is no network
                     // 实际实现类为 AndroidUpnpServiceConfiguration.
-                    streamClient = getConfiguration().createStreamClient();
+//                    streamClient = getConfiguration().createStreamClient();
 
                     enabled = true;
                     return true;
