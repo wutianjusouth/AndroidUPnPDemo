@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidUPnPDemo</string>
+    <string name="app_name">UPnP--wutj</string>
 
     <string name="notice">请选择连接设备，选择连接设备才可播放</string>
     <string name="selectedText">已选中: %s</string>

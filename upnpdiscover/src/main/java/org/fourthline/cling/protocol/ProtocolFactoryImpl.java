@@ -63,6 +63,7 @@ import java.util.logging.Logger;
  * @author Christian Bauer
  */
 //@ApplicationScoped
+    // ProtocolFactory的实现类.
 public class ProtocolFactoryImpl implements ProtocolFactory {
 
     final private static Logger log = Logger.getLogger(ProtocolFactory.class.getName());

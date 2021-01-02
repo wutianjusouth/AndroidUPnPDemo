@@ -63,6 +63,7 @@ import java.util.logging.Logger;
  * @author Christian Bauer
  */
 //@ApplicationScoped
+    // Router的实现类.
 public class RouterImpl implements Router {
 
     private static Logger log = Logger.getLogger(Router.class.getName());

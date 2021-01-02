@@ -15,6 +15,7 @@
 
 package org.fourthline.cling;
 
+import org.fourthline.cling.android.AndroidUpnpServiceConfiguration;
 import org.fourthline.cling.controlpoint.ControlPoint;
 import org.fourthline.cling.controlpoint.ControlPointImpl;
 import org.fourthline.cling.protocol.ProtocolFactory;
@@ -62,7 +63,8 @@ public class UpnpServiceImpl implements UpnpService {
     }
 
     public UpnpServiceImpl(RegistryListener... registryListeners) {
-        this(new DefaultUpnpServiceConfiguration(), registryListeners);
+//        this(new DefaultUpnpServiceConfiguration(), registryListeners);
+        this(new AndroidUpnpServiceConfiguration(), registryListeners);
     }
 
     public UpnpServiceImpl(UpnpServiceConfiguration configuration, RegistryListener... registryListeners) {

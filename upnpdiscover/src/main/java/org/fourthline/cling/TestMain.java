@@ -24,9 +24,9 @@ import org.fourthline.cling.registry.RegistryListener;
 /**
  * Runs a simple UPnP discovery procedure.
  */
-public class Main {
+public class TestMain {
 
-    public static void main(String[] args) throws Exception {
+    public static void upnpDiscover(String[] args) throws Exception {
 
         // UPnP discovery is asynchronous, we need a callback
         RegistryListener listener = new RegistryListener() {
@@ -96,7 +96,7 @@ public class Main {
 
         // Let's wait 10 seconds for them to respond
         System.out.println("Waiting 10 seconds before shutting down...");
-        Thread.sleep(10000);
+        Thread.sleep(20 * 1000);
 
         // Release all resources and advertise BYEBYE to other UPnP devices
         System.out.println("Stopping Cling...");
