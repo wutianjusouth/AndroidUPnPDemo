@@ -1,2 +1,3 @@
-include ':app', ':clinglibrary'
-//include ':app'
+include ':upnpdiscover'
+//include ':app', ':clinglibrary'
+include ':app'

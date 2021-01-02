@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.zane.androidupnpdemo"
-        minSdkVersion 14
+        minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -43,6 +43,7 @@ dependencies {
     compile 'org.slf4j:slf4j-simple:1.7.21'
     compile 'com.koushikdutta.urlimageviewhelper:urlimageviewhelper:1.0.4'
 
-    implementation project(':clinglibrary')
+//    implementation project(':clinglibrary')
+    implementation project(':upnpdiscover')
 
 }
