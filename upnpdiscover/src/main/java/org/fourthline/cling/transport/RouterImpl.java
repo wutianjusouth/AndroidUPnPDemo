@@ -403,17 +403,17 @@ public class RouterImpl implements Router {
 
                     multicastReceivers.put(networkInterface, multicastReceiver);
                 } catch (InitializationException ex) {
-                    /* TODO: What are some recoverable exceptions for this?
-                    log.warning(
-                        "Ignoring network interface '"
-                            + networkInterface.getDisplayName()
-                            + "' init failure of MulticastReceiver: " + ex.toString());
-                    if (log.isLoggable(Level.FINE))
-                        log.log(Level.FINE, "Initialization exception root cause", Exceptions.unwrap(ex));
-                    log.warning("Removing unusable interface " + interface);
-                    it.remove();
-                    continue; // Don't need to try anything else on this interface
-                    */
+//                    /* TODO: What are some recoverable exceptions for this?
+//                    log.warning(
+//                        "Ignoring network interface '"
+//                            + networkInterface.getDisplayName()
+//                            + "' init failure of MulticastReceiver: " + ex.toString());
+//                    if (log.isLoggable(Level.FINE))
+//                        log.log(Level.FINE, "Initialization exception root cause", Exceptions.unwrap(ex));
+//                    log.warning("Removing unusable interface " + interface);
+//                    it.remove();
+//                    continue; // Don't need to try anything else on this interface
+//                    */
                     throw ex;
                 }
             }

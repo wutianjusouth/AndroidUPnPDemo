@@ -115,7 +115,7 @@ public class DatagramIOImpl implements DatagramIO<DatagramIOConfigurationImpl> {
                                 + " on: " + localAddress
                 );
 
-
+                // 在此接收 UPnP 的回调.
                 router.received(datagramProcessor.read(localAddress.getAddress(), datagram));
 
             } catch (SocketException ex) {

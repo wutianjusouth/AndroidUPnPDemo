@@ -63,6 +63,7 @@ import org.seamless.util.Exceptions;
  *
  * @author Christian Bauer
  */
+// 获取远程设备的描述，在设备发现的后一步.
 public class RetrieveRemoteDescriptors implements Runnable {
 
     final private static Logger log = Logger.getLogger(RetrieveRemoteDescriptors.class.getName());
@@ -131,8 +132,7 @@ public class RetrieveRemoteDescriptors implements Runnable {
 
     	try {
 
-    		deviceDescRetrievalMsg =
-                new StreamRequestMessage(UpnpRequest.Method.GET, rd.getIdentity().getDescriptorURL());
+    		deviceDescRetrievalMsg = new StreamRequestMessage(UpnpRequest.Method.GET, rd.getIdentity().getDescriptorURL());
 
             // Extra headers
             UpnpHeaders headers =
@@ -153,20 +153,15 @@ public class RetrieveRemoteDescriptors implements Runnable {
             return ;
         }
 
+    	// 打印日志.
         if (deviceDescMsg == null) {
-            log.warning(
-                "Device descriptor retrieval failed, no response: " + rd.getIdentity().getDescriptorURL()
-            );
+            log.warning("Device descriptor retrieval failed, no response: " + rd.getIdentity().getDescriptorURL());
             return;
         }
 
         if (deviceDescMsg.getOperation().isFailed()) {
-            log.warning(
-                    "Device descriptor retrieval failed: "
-                            + rd.getIdentity().getDescriptorURL() +
-                            ", "
-                            + deviceDescMsg.getOperation().getResponseDetails()
-            );
+            log.warning("Device descriptor retrieval failed: " + rd.getIdentity().getDescriptorURL() + ", "
+                            + deviceDescMsg.getOperation().getResponseDetails());
             return;
         }
 

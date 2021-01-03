@@ -39,6 +39,7 @@ import org.fourthline.cling.transport.Router;
  *
  * @author Christian Bauer
  */
+// 主要用于APP中的Android UI对 UPnP 的调用.
 public class AndroidUpnpServiceImpl extends Service {
 
     protected UpnpService upnpService;

@@ -48,6 +48,7 @@ public class ReceivingSearchResponse extends ReceivingAsync<IncomingSearchRespon
         super(upnpService, new IncomingSearchResponse(inputMessage));
     }
 
+    // search 之后的response.
     protected void execute() throws RouterException {
 
         if (!getInputMessage().isSearchResponseMessage()) {
@@ -92,10 +93,9 @@ public class ReceivingSearchResponse extends ReceivingAsync<IncomingSearchRespon
 
         // Unfortunately, we always have to retrieve the descriptor because at this point we
         // have no idea if it's a root or embedded device
+        // 获取 UPnP 设备的描述.      0623
         getUpnpService().getConfiguration().getAsyncProtocolExecutor().execute(
-                new RetrieveRemoteDescriptors(getUpnpService(), rd)
-        );
-
+                new RetrieveRemoteDescriptors(getUpnpService(), rd));
     }
 
 }

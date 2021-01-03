@@ -40,6 +40,7 @@ import java.util.logging.Logger;
  * @author Michael Pujos
  * @author Christian Bauer
  */
+// 主要用于app模块中.
 public class AndroidRouter extends RouterImpl {
 
     final private static Logger log = Logger.getLogger(Router.class.getName());
